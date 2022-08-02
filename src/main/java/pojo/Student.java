@@ -1,0 +1,136 @@
+package pojo;
+
+import java.util.Date;
+//学生表实体类
+public class Student {
+	private String Sno;
+	 private String name;
+	 private Date date; //入学时间
+	 private String nation;
+	 private String political_outlook; //政治面貌
+	 private String native_place;  //籍贯
+	 private String phone_number;
+	 private String dormitory;  //宿舍
+	 private String home_address;
+	 private String home_phone;
+	 private String parent_phone;
+	 private String is_only_child;
+	 private String specialty;
+	 private String hobby;
+	 private String goals; //目标
+	 private String Cno;
+	 private String Dno;
+	public String getSno() {
+		return Sno;
+	}
+	public void setSno(String sno) {
+		Sno = sno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public String getNation() {
+		return nation;
+	}
+	public void setNation(String nation) {
+		this.nation = nation;
+	}
+	public String getPolitical_outlook() {
+		return political_outlook;
+	}
+	public void setPolitical_outlook(String political_outlook) {
+		this.political_outlook = political_outlook;
+	}
+	public String getNative_place() {
+		return native_place;
+	}
+	public void setNative_place(String native_place) {
+		this.native_place = native_place;
+	}
+	public String getPhone_number() {
+		return phone_number;
+	}
+	public void setPhone_number(String phone_number) {
+		this.phone_number = phone_number;
+	}
+	public String getDormitory() {
+		return dormitory;
+	}
+	public void setDormitory(String dormitory) {
+		this.dormitory = dormitory;
+	}
+	public String getHome_address() {
+		return home_address;
+	}
+	public void setHome_address(String home_address) {
+		this.home_address = home_address;
+	}
+	public String getHome_phone() {
+		return home_phone;
+	}
+	public void setHome_phone(String home_phone) {
+		this.home_phone = home_phone;
+	}
+	public String getParent_phone() {
+		return parent_phone;
+	}
+	public void setParent_phone(String parent_phone) {
+		this.parent_phone = parent_phone;
+	}
+	public String getIs_only_child() {
+		return is_only_child;
+	}
+	public void setIs_only_child(String is_only_child) {
+		this.is_only_child = is_only_child;
+	}
+	public String getSpecialty() {
+		return specialty;
+	}
+	public void setSpecialty(String specialty) {
+		this.specialty = specialty;
+	}
+	public String getHobby() {
+		return hobby;
+	}
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+	public String getGoals() {
+		return goals;
+	}
+	public void setGoals(String goals) {
+		this.goals = goals;
+	}
+	public String getCno() {
+		return Cno;
+	}
+	public void setCno(String cno) {
+		Cno = cno;
+	}
+	public String getDno() {
+		return Dno;
+	}
+	public void setDno(String dno) {
+		Dno = dno;
+	}
+	@Override
+	public String toString() {
+		return "Student [Sno=" + Sno + ", name=" + name + ", date=" + date + ", nation=" + nation
+				+ ", political_outlook=" + political_outlook + ", native_place=" + native_place + ", phone_number="
+				+ phone_number + ", dormitory=" + dormitory + ", home_address=" + home_address + ", home_phone="
+				+ home_phone + ", parent_phone=" + parent_phone + ", is_only_child=" + is_only_child + ", specialty="
+				+ specialty + ", hobby=" + hobby + ", goals=" + goals + ", Cno=" + Cno + ", Dno=" + Dno + "]";
+	}
+	 
+	 
+
+}
