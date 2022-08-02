@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.TalkDao">
+<resultMap type="pojo.Talk" id="TalkMap">
+	<id property="number" column="number"></id>
+	<result property="content" column="date"/>
+	<result property="date" column="date"/>
+	<association property="student" javaType="pojo.Student">
+		<id property="Sno" column="Sno"></id>
+		<result property="name" column="name"/>
+		<result property="date" column="date"/>
+		<result property="nation" column="nation"/>
+		<result property="political_outlook" column="political_outlook"/>
+		<result property="native_place" column="native_place"/>
+		<result property="phone_number" column="phone_number"/>
+		<result property="dormitory" column="dormitory"/>
+		<result property="home_address" column="home_address"/>
+		<result property="home_place" column="home_place"/>
+		<result property="parent_phone" column="parent_phone"/>
+		<result property="is_only_child" column="is_only_child"/>
+		<result property="specialty" column="specialty"/>
+		<result property="hobby" column="hobby"/>
+		<result property="goals" column="goals"/>
+		<result property="Cno" column="Cno"/>
+		<result property="Dno" column="Dno"/>
+	</association>
+</resultMap>
+
+	<select id="queryAllTalks" resultMap="TalkMap">
+	select * from talk,student where student.Sno = talk.Sno
+	order by Sno
+	</select>
+</mapper>
