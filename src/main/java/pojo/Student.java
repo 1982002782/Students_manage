@@ -3,7 +3,7 @@ package pojo;
 import java.util.Date;
 //学生表实体类
 public class Student {
-	private String Sno;
+	 private String Sno;
 	 private String name;
 	 private Date date; //入学时间
 	 private String nation;
@@ -18,8 +18,7 @@ public class Student {
 	 private String specialty;
 	 private String hobby;
 	 private String goals; //目标
-	 private String Cno;
-	 private String Dno;
+	 private Classes classes;
 	public String getSno() {
 		return Sno;
 	}
@@ -110,17 +109,12 @@ public class Student {
 	public void setGoals(String goals) {
 		this.goals = goals;
 	}
-	public String getCno() {
-		return Cno;
+	
+	public Classes getClasses() {
+		return classes;
 	}
-	public void setCno(String cno) {
-		Cno = cno;
-	}
-	public String getDno() {
-		return Dno;
-	}
-	public void setDno(String dno) {
-		Dno = dno;
+	public void setClasses(Classes classes) {
+		this.classes = classes;
 	}
 	@Override
 	public String toString() {
@@ -128,8 +122,10 @@ public class Student {
 				+ ", political_outlook=" + political_outlook + ", native_place=" + native_place + ", phone_number="
 				+ phone_number + ", dormitory=" + dormitory + ", home_address=" + home_address + ", home_phone="
 				+ home_phone + ", parent_phone=" + parent_phone + ", is_only_child=" + is_only_child + ", specialty="
-				+ specialty + ", hobby=" + hobby + ", goals=" + goals + ", Cno=" + Cno + ", Dno=" + Dno + "]";
+				+ specialty + ", hobby=" + hobby + ", goals=" + goals + ", classes=" + classes + "]";
 	}
+	
+	
 	 
 	 
 

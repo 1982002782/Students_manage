@@ -18,7 +18,7 @@
 <tr>
 	<c:forEach items="${talks}" var="talk">
 	<tr>
-		<td>${talk.Sno }</td>	
+		<td>${talk.student.getSno()}</td>	
 		<td>${talk.number}</td>	
 		<td>${talk.content }</td>	
 		<td>${talk.date }</td>	

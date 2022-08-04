@@ -22,13 +22,23 @@
 		<result property="specialty" column="specialty"/>
 		<result property="hobby" column="hobby"/>
 		<result property="goals" column="goals"/>
-		<result property="Cno" column="Cno"/>
-		<result property="Dno" column="Dno"/>
+		<association property="classes" javaType="pojo.Classes">
+			<id property="Cno" column="Cno"/>
+			<association property="dept" javaType="pojo.Dept">
+				<id property="Dno" column="Dno"/>
+				<result property="name" column="name"></result>
+			</association>
+		</association>
 	</association>
 </resultMap>
 
 	<select id="queryAllTalks" resultMap="TalkMap">
-	select * from talk,student where student.Sno = talk.Sno
-	order by Sno
+	select * from talk,student,classes,department where student.Sno = talk.Sno 
+	and classes.Cno=student.Cno and department.Dno=classes.Dno
+	</select>
+	
+	<select id="queryAllTalksBySno" resultMap="TalkMap">
+	select * from talk,student,classes,department where student.Sno = talk.Sno 
+	and classes.Cno=student.Cno and department.Dno=classes.Dno and Sno=#{Sno}
 	</select>
 </mapper>

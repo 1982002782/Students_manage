@@ -16,11 +16,4 @@
 		<property name="prefix" value=""></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	<!-- 配置拦截器 -->
-    <mvc:interceptors>
-	<mvc:interceptor>
-	<mvc:mapping path="/admin/*"/>
-	<bean class="Interceptor.LoginInterceptor"/>
-	</mvc:interceptor>
-</mvc:interceptors>       
 </beans>
