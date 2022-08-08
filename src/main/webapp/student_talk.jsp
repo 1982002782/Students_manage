@@ -37,14 +37,14 @@
 	
 		<div class="collapse navbar-collapse" id="example-navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="${pageContext.request.contextPath}/student.jsp">基础信息</a></li>
-	            <li class="dropdown">
+				<li><a href="${pageContext.request.contextPath}/student.jsp">基础信息</a></li>
+	            <li class="dropdown active">
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他信息<span class="caret"></span></a>
 	            	<ul class="dropdown-menu">
 						<li><a href="#">学籍信息</a></li>
 						<li><a href="#">联系信息</a></li>
 		            	<li><a href="${pageContext.request.contextPath}/student_punishAndReward.jsp">奖罚信息</a></li>
-		            	<li><a href="${pageContext.request.contextPath}/student_talk.jsp">谈话记录</a></li>
+		            	<li class="active"><a href="${pageContext.request.contextPath}/student_talk.jsp">谈话记录</a></li>
 	            	</ul>
 	            </li>
 				<li><a href="${pageContext.request.contextPath}/student_modifyInformation.jsp">修改资料</a></li>
@@ -80,85 +80,32 @@
 		<div class=" col-md-8 col-md-offset-1">
 			<div class="panel panel-info">
 			    <div class="panel-heading ">
-			        <h3 class="panel-title text-center">个人基础信息</h3>
+			        <h3 class="panel-title text-center">班主任谈话记录</h3>
 			    </div>
 			    <div class="panel-body">
 					<div class="table-responsive">
 						<table class="table table-bordered">
-							<thead>
+							<thead>								
+
+							
 								<tr>
-									<th class="col-md-2">姓名</th>
-									<td class="col-md-3"></td>
-									<th class="col-md-2">学号</th>
-									<td class="col-md-3"></td>
-									<th class="col-md-2">照片</th>
+									<td  colspan="5" >第一次谈话：</td>
 								</tr>
 			
 								<tr>
-									<th>班级</th>
-									<td></td>
-									<th>学院</th>
-									<td></td>
-									<th rowspan="5"></th>
-								</tr>
-								
-								<tr>
-									<th>出生年月 </th>
-									<td></td>
-									<th>民族</th>
-									<td></td>
-								</tr>
-								
-								<tr>
-									<th>政治面貌</th>
-									<td></td>
-									<th>籍贯</th>
-									<td></td>
-								</tr>
-								
-								<tr>
-									<th>联系电话 </th>
-									<td></td>
-									<th>宿舍</th>
-									<td></td>
-								</tr>
-								
-								<tr>
-									<th>家庭电话</th>
-									<td></td>
-									<th>家长电话</th>
-									<td></td>
-								</tr>
-								
-								<tr>
-									<th>是否为独生子女</th>
-									<td></td>
-									<th>家庭地址</th>
-									<td colspan="2"></td>
-								</tr>					
-			
-													
-								<tr>
-									<th>个人特长</th>
-									<td colspan="4"></td>
+									<td  colspan="5" >第二次谈话：</td>
 								</tr>
 			
 								<tr>
-									<th>兴趣爱好</th>
-									<td colspan="4"></td>
+									<td  colspan="5" >第三次谈话：</td>
 								</tr>
-											
-								<tr>
-									<th>个人理想与目标:</th>
-									<td colspan="4"></td>
-								</tr>
-								
 							</thead>
 						</table>
 					</div>  
-			</div>	
-			    </div>
+				</div>	
+			</div>
 		</div>
+
 
 	</div>
 </div>

@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.TalkDao">
-<!--创建talk表和student表的关联-->
-<resultMap type="pojo.Talk" id="TalkMap">
-	<id property="number" column="number"></id>
-	<result property="content" column="date"/>
-	<result property="date" column="date"/>
-	<association property="student" javaType="pojo.Student">
+<mapper namespace="dao.StudentDao">
+	<resultMap type="pojo.Student" id="StudentMap">
 		<id property="Sno" column="Sno"></id>
 		<result property="name" column="name"/>
 		<result property="date" column="date"/>
@@ -30,22 +25,24 @@
 				<result property="name" column="name"></result>
 			</association>
 		</association>
-	</association>
-</resultMap>
-
-	<!-- 查询数据库内所有的记录，返回到TalkDao类中与属性id对应的方法 -->
-	<select id="queryAllTalks" resultMap="TalkMap">
-	select * from talk,student,classes,department where student.Sno = talk.Sno 
-	and classes.Cno=student.Cno and department.Dno=classes.Dno
+	</resultMap>
+	
+	<select id="queryAllStudents" resultMap="StudentMap">
+		select * from student,classes,department where student.Cno = classes.Cno 
+		and classes.Dno = department.Dno
+		order by student.Sno
 	</select>
 	
-	<select id="queryAllTalksBySno" resultMap="TalkMap">
-	select * from talk,student,classes,department where student.Sno = talk.Sno 
-	and classes.Cno=student.Cno and department.Dno=classes.Dno and Sno=#{Sno}
+	<select id="queryStudentBySno" resultMap="StudentMap">
+		select * from student,classes,department 
+		where student.Cno = classes.Cno 
+		and classes.Dno = department.Dno 
+		and Sno=#{Sno}
 	</select>
 	
-	<!-- 根据TalkDao类传来得数据对talk表增加数据，并反馈到TalkDao类中对应的方法 -->
-	<insert id="addTalk" parameterType="pojo.Talk">
-		insert into talk values(#{Sno},#{number},#{content},#{date})
-	</insert>
+	<update id="updateStudentInformation" >
+		update student
+		set political_outlook=#{political_outlook}, phone_number=#{phone_number}, Cno=#{Cno},home_phone=#{home_phone}, parent_phone=#{parent_phone}, home_adress=#{home_adress}, hobby=#{hobby}, goals=#{goals}, is_only_child=#{is_only_child}
+			where Sno=#{Sno}
+	</update>
 </mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+	<resultMap type="pojo.User_Students" id="StudentsUserMap">
+		<result property="password" column="password"/>
+		<association property="student" javaType="pojo.Student">
+			<id property="Sno" column="Sno"></id>
+			<result property="name" column="name"/>
+			<result property="date" column="date"/>
+			<result property="nation" column="nation"/>
+			<result property="political_outlook" column="political_outlook"/>
+			<result property="native_place" column="native_place"/>
+			<result property="phone_number" column="phone_number"/>
+			<result property="dormitory" column="dormitory"/>
+			<result property="home_address" column="home_address"/>
+			<result property="home_place" column="home_place"/>
+			<result property="parent_phone" column="parent_phone"/>
+			<result property="is_only_child" column="is_only_child"/>
+			<result property="specialty" column="specialty"/>
+			<result property="hobby" column="hobby"/>
+			<result property="goals" column="goals"/>
+			<association property="classes" javaType="pojo.Classes">
+			<id property="Cno" column="Cno"/>
+				<association property="dept" javaType="pojo.Dept">
+					<id property="Dno" column="Dno"/>
+					<result property="name" column="name"></result>
+				</association>
+			</association>
+		</association>
+	</resultMap>
+	
+	<select id="queryAdminToLogin" resultType="pojo.User.Admin">
+		select * from user_admin where username=#{username} and password=#{password}
+	</select>
+	
+	<select id="queryStudentToLogin" resultMap="StudentsUserMap">
+		select  distinct * from user_students u,student s,classes c,department d
+			where s.Sno = u.Sno and c.Cno=s.Cno and c.Dno=d.Dno
+			and Sno=#{Sno} and password = #{password} 
+	</select>
+	
+</mapper>

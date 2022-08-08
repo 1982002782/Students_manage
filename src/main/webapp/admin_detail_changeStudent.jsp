@@ -23,32 +23,34 @@
 
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid"> 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#example-navbar-collapse">
-				<span class="sr-only">切换导航</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#example-navbar-collapse">
+			<span class="sr-only">切换导航</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
 
-		<div class="collapse navbar-collapse" id="example-navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="${pageContext.request.contextPath}/student.jsp">基础信息</a></li>
-	            <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他信息<span class="caret"></span></a>
-	            	<ul class="dropdown-menu">
-						<li><a href="#">学籍信息</a></li>
-						<li><a href="#">联系信息</a></li>
-		            	<li><a href="${pageContext.request.contextPath}/student_punishAndReward.jsp">奖罚信息</a></li>
-		            	<li><a href="${pageContext.request.contextPath}/student_talk.jsp">谈话记录</a></li>
-	            	</ul>
-	            </li>
-				<li class="active"><a href="${pageContext.request.contextPath}/student_modifyInformation.jsp">修改资料</a></li>
-				<li><a href="${pageContext.request.contextPath}/student_changePassword.jsp">修改密码</a></li>
-			</ul>
-		</div>
+	<div class="collapse navbar-collapse" id="example-navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li><a href="${pageContext.request.contextPath}/admin.jsp">首页</a></li>
+			<li><a href="${pageContext.request.contextPath}/admin_detail.jsp">学生基础信息</a></li>
+	        <li class="dropdown">
+	        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学生其他信息<span class="caret"></span></a>
+		        <ul class="dropdown-menu">
+			        <li><a href="#">学籍信息</a></li>
+					<li><a href="#">联系信息</a></li>
+		           	<li><a href="${pageContext.request.contextPath}/admin_detail_punishAndReward.jsp">奖罚信息</a></li>
+		           	<li><a href="${pageContext.request.contextPath}/admin_detail_talk.jsp">谈话记录</a></li>
+	         	</ul>
+	        </li>
+			<li class="active"><a href="${pageContext.request.contextPath}/admi_detailn_changeStudent.jsp">修改学生信息</a></li>
+			<li><a href="${pageContext.request.contextPath}/admin_detail_conversation.jsp">添加谈话</a></li>
+			<li><a href="${pageContext.request.contextPath}/admin_detail_addPunishAndReward.jsp">添加奖罚信息</a></li>
+		</ul>
+	</div>
 	</div>
 </nav>
 
@@ -63,7 +65,7 @@
 			    </div>
 			    <div class="panel-body">
 					<ul class="list-group">
-					    <li class="list-group-item"><span class=" glyphicon glyphicon-user"></span>	   学生 2020115210</li>
+					    <li class="list-group-item"><span class=" glyphicon glyphicon-user"></span>	 教职工 2020115210</li>
 					    <li class="list-group-item"><span class=" glyphicon glyphicon-time"></span></li>
 					    <li class="list-group-item"><span class=" glyphicon glyphicon-map-marker"></span></li>
 					</ul>
@@ -73,17 +75,57 @@
 			    </div>
 			</div>
 		</div>
+
 		<div class="col-md-5 col-md-offset-2" style="position: relative;">
 		    <div class="panel panel-primary">
 		        <div class="panel-heading">
-		            <h3 class="panel-title ">修改资料</h3>
+		            <h3 class="panel-title ">修改学生信息</h3>
 		        </div>    
 		        <div class="panel-body">
 		       		<form action="#" method="post" enctype="multipart/form-data">
 		                <div class="input-group">
-							<span class="input-group-addon">政治面貌</span>
+							<span class="input-group-addon">姓名</span>
 							<input type="text" class="form-control">
+							<span class="input-group-addon">学号</span>
+							<input type="text" class="form-control">  
+		                </div>
+		                <br>
+		                <div class="input-group">
+		                    <span  class="input-group-addon">是否为独生子女</span>
+		                    	<select name="type_id" class="form-control" >
+		                    		<option value="否">否</option>
+									<option value="是">是</option>
+								</select>
+							<span class="input-group-addon">学院</span>
+								<select class="form-control">
+									<option></option>
+									<option value=1>计算机</option>
+									<option value=2>数学</option>
+									<option value=3>英语</option>
+									<option value=4>语文</option>
+							</select>
+		                </div>
+		                <br>
+		                <div class="input-group">
+							<span class="input-group-addon">班级</span>
+							<input type="text" class="form-control">
+							<span class="input-group-addon">民族</span>
+							<input type="text" class="form-control">  
+							<span class="input-group-addon">籍贯</span>
+							<input type="text" class="form-control">  
+		                </div>
+		                <br>
+		                <div class="input-group">
+							<span class="input-group-addon">出生年月</span>
+							<input type="date" class="form-control">
+							<span class="input-group-addon">政治面貌</span>
+							<input type="text" class="form-control">  
+		                </div>
+		  				<br>
+		                <div class="input-group">
 							<span class="input-group-addon">联系电话</span>
+							<input type="text" class="form-control">
+							<span class="input-group-addon">宿舍</span>
 							<input type="text" class="form-control">  
 		                </div>
 		  				<br>
@@ -115,11 +157,8 @@
 		                </div>
 		                <br>
 		                <div class="input-group">
-		                    <span  class="input-group-addon">是否为独生子女</span>
-		                    		<select name="type_id" class="form-control" >
-		                    			<option value="否">否</option>
-										<option value="是">是</option>
-									</select>
+		                    <span  class="input-group-addon">照片</span>
+ 							<input type="file" class="form-control" >
 		                </div>
 		
 						<!-- 模态框（Modal） -->
@@ -128,9 +167,9 @@
 						        <div class="modal-content">
 						            <div class="modal-header">
 						                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						                <h4 class="modal-title" id="myModalLabel">修改资料</h4>
+						                <h4 class="modal-title" id="myModalLabel">修改学生信息</h4>
 						            </div>
-						            <div class="modal-body">是否确认提交？</div>
+						            <div class="modal-body">是否确认修改？</div>
 						            <div class="modal-footer">
 						                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 						                <button type="submit" class="btn btn-primary">确定</button>
@@ -146,6 +185,7 @@
 		        </div>	
 			</div>
 		</div>
+
 	</div>
 </div>
 
