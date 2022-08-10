@@ -44,7 +44,7 @@
 						<li><a href="#">学籍信息</a></li>
 						<li><a href="#">联系信息</a></li>
 		            	<li><a href="${pageContext.request.contextPath}/student_punishAndReward.jsp">奖罚信息</a></li>
-		            	<li><a href="${pageContext.request.contextPath}/student_talk.jsp">谈话记录</a></li>
+		            	<li><a href="${pageContext.request.contextPath}/queryAllTalksBySno.do">谈话记录</a></li>
 	            	</ul>
 	            </li>
 				<li><a href="${pageContext.request.contextPath}/student_modifyInformation.jsp">修改资料</a></li>
@@ -67,9 +67,9 @@
 			    </div>
 			    <div class="panel-body">
 					<ul class="list-group">
-					    <li class="list-group-item"><span class=" glyphicon glyphicon-user"></span>	 学生 2020115210</li>
-					    <li class="list-group-item"><span class=" glyphicon glyphicon-time"></span></li>
-					    <li class="list-group-item"><span class=" glyphicon glyphicon-map-marker"></span></li>
+					    <li class="list-group-item"><span class=" glyphicon glyphicon-user"></span>	 学生 ${user.getStudent().getSno() }</li>
+					    <li class="list-group-item"><span class=" glyphicon glyphicon-time"></span> ${time}</li>
+					    <li class="list-group-item"><span class=" glyphicon glyphicon-map-marker"></span> ${ip}</li>
 					</ul>
 					<a href="${pageContext.request.contextPath}/login.jsp" class="btn btn-primary btn-lg text-center">
 						<span class="glyphicon glyphicon-off"></span>
@@ -88,69 +88,69 @@
 							<thead>
 								<tr>
 									<th class="col-md-2">姓名</th>
-									<td class="col-md-3"></td>
+									<td class="col-md-3">${user.getStudent().name}</td>
 									<th class="col-md-2">学号</th>
-									<td class="col-md-3"></td>
+									<td class="col-md-3">${user.getStudent().getSno()}</td>
 									<th class="col-md-2">照片</th>
 								</tr>
 			
 								<tr>
 									<th>班级</th>
-									<td></td>
+									<td>${user.getStudent().getClasses().getCno()}</td>
 									<th>学院</th>
-									<td></td>
+									<td>${user.getStudent().getClasses().getDept().getDno() }</td>
 									<th rowspan="5"></th>
 								</tr>
 								
 								<tr>
 									<th>出生年月 </th>
-									<td></td>
+									<td>${user.getStudent().date }</td>
 									<th>民族</th>
-									<td></td>
+									<td>${user.getStudent().nation }</td>
 								</tr>
 								
 								<tr>
 									<th>政治面貌</th>
-									<td></td>
+									<td>${user.getStudent().political_outlook }</td>
 									<th>籍贯</th>
-									<td></td>
+									<td>${user.getStudent().native_place }</td>
 								</tr>
 								
 								<tr>
 									<th>联系电话 </th>
-									<td></td>
+									<td>${user.getStudent().getPhone_number() }</td>
 									<th>宿舍</th>
-									<td></td>
+									<td>${user.getStudent().dormitory }</td>
 								</tr>
 								
 								<tr>
 									<th>家庭电话</th>
-									<td></td>
+									<td>${user.getStudent().getHome_phone() }</td>
 									<th>家长电话</th>
-									<td></td>
+									<td>${user.getStudent().parent_phone }</td>
 								</tr>
 								
 								<tr>
 									<th>是否为独生子女</th>
-									<td></td>
+									<td>${user.getStudent().is_only_child }</td>
 									<th>家庭地址</th>
-									<td colspan="2"></td>
+									<td colspan="2">${user.getStudent().home_address }</td>
 								</tr>					
 			
 													
 								<tr>
 									<th>个人特长</th>
-									<td colspan="4"></td>
+									<td colspan="4">${user.getStudent().specialty }</td>
 								</tr>
 			
 								<tr>
 									<th>兴趣爱好</th>
-									<td colspan="4"></td>
+									<td colspan="4">${user.getStudent().hobby }</td>
 								</tr>
 											
 								<tr>
 									<th>个人理想与目标:</th>
-									<td colspan="4"></td>
+									<td colspan="4">${user.getStudent().goals }</td>
 								</tr>
 								
 							</thead>

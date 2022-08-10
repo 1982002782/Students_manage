@@ -30,14 +30,19 @@
 		</association>
 	</resultMap>
 	
-	<select id="queryAdminToLogin" resultType="pojo.User.Admin">
-		select * from user_admin where username=#{username} and password=#{password}
+	<select id="queryAdminToLogin" resultType="pojo.User_Admin">
+		select * from user_admin where username=#{name} and password=#{password}
 	</select>
 	
 	<select id="queryStudentToLogin" resultMap="StudentsUserMap">
 		select  distinct * from user_students u,student s,classes c,department d
 			where s.Sno = u.Sno and c.Cno=s.Cno and c.Dno=d.Dno
-			and Sno=#{Sno} and password = #{password} 
+			and s.Sno=#{name} and password = #{password} 
 	</select>
 	
+	<update id="updatePassword">
+		update user_students
+		set password=#{password_2}
+		where password=#{password_1} and Sno=#{username}
+	</update>
 </mapper>

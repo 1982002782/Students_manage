@@ -53,7 +53,7 @@
 				<div class="login">
 				<br>
 					<div class="h4 text-center">用户登录</div>
-					<form class="form-horizontal" role="form" action="#" method="post">
+					<form class="form-horizontal" role="form" action="Login.do" method="post">
 						<div class="form-group">
 							<label for="firstname" class="col-sm-3 control-label">账号</label>
 								<div class="col-md-9">
@@ -64,16 +64,6 @@
     						<label for="lastname" class="col-sm-3 control-label">密码</label>
     						<div class="col-sm-9">
       							<input type="password" class="form-control" name="password" placeholder="请输入密码">
-    						</div>
-  						</div>
-  						<div class="form-group">
-    						<div class="col-sm-offset-1 col-sm-10">
-      							<label class="radio-inline">
-      								<input type="radio" checked name="type" value="学生"/>学生
-      							</label>
-      							<label class="radio-inline">
-      								<input type="radio" name="type" value="教职工"/>教职工
-      							</label>
     						</div>
   						</div>
   						<div class="form-group">

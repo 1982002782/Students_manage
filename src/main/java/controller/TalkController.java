@@ -6,12 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pojo.Talk;
+import pojo.User_Students;
 import service.TalkService;
+import service.UserService;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,7 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class TalkController {
 	@Autowired
 	private TalkService talkService;
-	
+	private UserService userService;
 	@RequestMapping("queryAllTalks.do") 
 	public String queryAllTalks(Model model) {
 		//获取数据库内的所有谈话记录
@@ -31,10 +35,12 @@ public class TalkController {
 	}
 	
 	@RequestMapping("queryAllTalksBySno.do")
-	public String queryAllTalksBySno(String Sno,Model model) {
+	public String queryAllTalksBySno(Model model,HttpSession session) {
+		User_Students user_Students = (User_Students)session.getAttribute("user");
+		String Sno = user_Students.getStudent().getSno();
 		List<Talk> talks = talkService.queryAllTalksBySno(Sno);
 		model.addAttribute("talks", talks);
-		return "student";
+		return "student_talk";
 	}
 	
 	@RequestMapping("addTalk.do")

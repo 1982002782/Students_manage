@@ -15,6 +15,11 @@ public class User_Students {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	@Override
+	public String toString() {
+		return "User_Students [student=" + student + ", password=" + password + "]";
+	}
+	
 	
 	
 

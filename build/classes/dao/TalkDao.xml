@@ -5,7 +5,7 @@
 <!--创建talk表和student表的关联-->
 <resultMap type="pojo.Talk" id="TalkMap">
 	<id property="number" column="number"></id>
-	<result property="content" column="date"/>
+	<result property="content" column="content"/>
 	<result property="date" column="date"/>
 	<association property="student" javaType="pojo.Student">
 		<id property="Sno" column="Sno"></id>
@@ -41,7 +41,7 @@
 	
 	<select id="queryAllTalksBySno" resultMap="TalkMap">
 	select * from talk,student,classes,department where student.Sno = talk.Sno 
-	and classes.Cno=student.Cno and department.Dno=classes.Dno and Sno=#{Sno}
+	and classes.Cno=student.Cno and department.Dno=classes.Dno and student.Sno=#{Sno}
 	</select>
 	
 	<!-- 根据TalkDao类传来得数据对talk表增加数据，并反馈到TalkDao类中对应的方法 -->

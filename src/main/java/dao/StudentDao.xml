@@ -12,7 +12,7 @@
 		<result property="phone_number" column="phone_number"/>
 		<result property="dormitory" column="dormitory"/>
 		<result property="home_address" column="home_address"/>
-		<result property="home_place" column="home_place"/>
+		<result property="home_phone" column="home_phone"/>
 		<result property="parent_phone" column="parent_phone"/>
 		<result property="is_only_child" column="is_only_child"/>
 		<result property="specialty" column="specialty"/>

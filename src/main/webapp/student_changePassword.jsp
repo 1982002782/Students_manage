@@ -79,7 +79,7 @@
 		            <h3 class="panel-title ">修改密码</h3>
 		        </div>    
 		        <div class="panel-body">
-		       		<form action="#" method="post" enctype="multipart/form-data">
+		       		<form action="updatePassword" method="post">
 		                <div class="input-group">
 		                    <span  class="input-group-addon">原密码</span>
 		                    <input type="password" class="form-control" name="password_1">

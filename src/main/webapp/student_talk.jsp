@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,20 +86,13 @@
 			    <div class="panel-body">
 					<div class="table-responsive">
 						<table class="table table-bordered">
-							<thead>								
-
+							<thead>							
+							<c:forEach items="${talks}" var="talk">
 							
 								<tr>
-									<td  colspan="5" >第一次谈话：</td>
+									<td colspan="5" > 第${talk.number}次谈话: 时间:${talk.date}<hr>${talk.content} </td>
 								</tr>
-			
-								<tr>
-									<td  colspan="5" >第二次谈话：</td>
-								</tr>
-			
-								<tr>
-									<td  colspan="5" >第三次谈话：</td>
-								</tr>
+							</c:forEach>
 							</thead>
 						</table>
 					</div>  
